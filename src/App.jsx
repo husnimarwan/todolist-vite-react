@@ -1,9 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([])
   const [inputValue, setInputValue] = useState('')
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode')
+    return savedMode ? JSON.parse(savedMode) : false
+  })
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode))
+    document.documentElement.classList.toggle('dark-mode', darkMode)
+  }, [darkMode])
+
+  const toggleDarkMode = () => {
+    setDarkMode(prev => !prev)
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -31,7 +44,16 @@ function App() {
 
   return (
     <div className="todo-container">
-      <h1>My Tasks</h1>
+      <div className="header">
+        <h1>My Tasks</h1>
+        <button 
+          className="theme-toggle"
+          onClick={toggleDarkMode}
+          aria-label="Toggle dark mode"
+        >
+          {darkMode ? '🌙' : '☀️'}
+        </button>
+      </div>
       
       <form onSubmit={handleSubmit} className="todo-form">
         <input
