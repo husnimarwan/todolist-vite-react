@@ -1,15 +1,17 @@
 # Modern Todo List App
 
-A sleek and modern Todo List application built with React and Vite, featuring a clean and intuitive user interface.
+A sleek and modern Todo List application built with React and Vite, featuring a clean and intuitive user interface with dark mode support.
 
 ![Todo List App Preview](screenshot.png)
 
 ## Features
 
 - ✨ Modern and clean UI design
+- 🌓 Dark mode with persistent preference
 - ✅ Add, complete, and delete tasks
 - 💫 Smooth animations and transitions
 - 🎨 Beautiful purple color scheme
+- 🔄 Local storage persistence
 - 📱 Responsive design
 - ⚡ Lightning-fast performance with Vite
 
@@ -18,7 +20,9 @@ A sleek and modern Todo List application built with React and Vite, featuring a 
 - React
 - Vite
 - CSS3 with modern features
-- React Hooks (useState)
+- React Hooks (useState, useEffect)
+- Local Storage for data persistence
+- CSS Variables for theming
 
 ## Getting Started
 
@@ -58,10 +62,21 @@ The built files will be in the `dist` directory.
 
 ## Usage
 
+### Managing Tasks
 1. Type your task in the input field
 2. Click "Add Task" or press Enter to add the task to your list
 3. Click on a task to mark it as complete
 4. Hover over a task and click the "×" button to delete it
+
+### Theme Switching
+- Click the theme toggle button (☀️/🌙) in the top-right corner to switch between light and dark modes
+- Your theme preference is automatically saved and will persist across browser sessions
+
+### Features
+- **Dark Mode**: Automatically saves your preference
+- **Persistence**: Tasks are saved in your browser's local storage
+- **Responsive**: Works on both desktop and mobile devices
+- **Keyboard Friendly**: Use Enter to add tasks
 
 ## Contributing
 
