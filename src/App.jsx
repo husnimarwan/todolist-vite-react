@@ -31,24 +31,27 @@ function App() {
 
   return (
     <div className="todo-container">
-      <h1>Todo List</h1>
+      <h1>My Tasks</h1>
       
       <form onSubmit={handleSubmit} className="todo-form">
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Add a new todo..."
+          placeholder="What do you need to do?"
           className="todo-input"
         />
-        <button type="submit" className="add-button">Add</button>
+        <button type="submit" className="add-button">Add Task</button>
       </form>
 
       <ul className="todo-list">
         {todos.map(todo => (
           <li key={todo.id} className="todo-item">
             <span
-              style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+              style={{ 
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                opacity: todo.completed ? 0.7 : 1
+              }}
               onClick={() => toggleTodo(todo.id)}
               className="todo-text"
             >
@@ -57,8 +60,9 @@ function App() {
             <button
               onClick={() => deleteTodo(todo.id)}
               className="delete-button"
+              aria-label="Delete task"
             >
-              Delete
+              ×
             </button>
           </li>
         ))}
