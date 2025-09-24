@@ -23,12 +23,17 @@ A sleek and modern Todo List application built with React and Vite, featuring a 
 - React Hooks (useState, useEffect)
 - Local Storage for data persistence
 - CSS Variables for theming
+- Docker for containerization
 
 ## Getting Started
 
 ### Prerequisites
 
-Make sure you have Node.js installed on your system.
+For local development:
+- Node.js
+
+For Docker deployment:
+- Docker
 
 ### Installation
 
@@ -59,6 +64,22 @@ npm run build
 ```
 
 The built files will be in the `dist` directory.
+
+### Docker Deployment
+
+You can also run this application using Docker:
+
+1. Build the Docker image:
+```bash
+docker build -t todo-list-app .
+```
+
+2. Run the container:
+```bash
+docker run -d -p 8080:80 todo-list-app
+```
+
+The application will be available at `http://localhost:8080`
 
 ## Usage
 
